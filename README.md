@@ -201,3 +201,103 @@ curl -X GET -u ${username}:${password} "https://stream.watsonplatform.net/speech
 #####  Recognize audio with time stamps - downloaded a certain audio file called audio-file.flac and played it here.
 
 curl -X POST -u ${username}:${password} --header "Content-Type: audio/flac" --header "Transfer-Encoding: chunked" --data-binary @./audio-file.flac "https://stream.watsonplatform.net/speech-to-text/api/v1/recognize?continuous=true&timestamps=true&max_alternatives=3"
+
+
+
+				{
+				   "results": [
+				      {
+				         "alternatives": [
+				            {
+				               "timestamps": [
+				                  [
+				                     "several", 
+				                     1.01, 
+				                     1.52
+				                  ], 
+				                  [
+				                     "tornadoes", 
+				                     1.52, 
+				                     2.15
+				                  ], 
+				                  [
+				                     "touch", 
+				                     2.15, 
+				                     2.5
+				                  ], 
+				                  [
+				                     "down", 
+				                     2.5, 
+				                     2.81
+				                  ], 
+				                  [
+				                     "as", 
+				                     2.81, 
+				                     2.93
+				                  ], 
+				                  [
+				                     "a", 
+				                     2.93, 
+				                     2.98
+				                  ], 
+				                  [
+				                     "line", 
+				                     2.98, 
+				                     3.29
+				                  ], 
+				                  [
+				                     "of", 
+				                     3.29, 
+				                     3.39
+				                  ], 
+				                  [
+				                     "severe", 
+				                     3.39, 
+				                     3.77
+				                  ], 
+				                  [
+				                     "thunderstorms", 
+				                     3.77, 
+				                     4.51
+				                  ], 
+				                  [
+				                     "swept", 
+				                     4.51, 
+				                     4.81
+				                  ], 
+				                  [
+				                     "through", 
+				                     4.81, 
+				                     4.94
+				                  ], 
+				                  [
+				                     "Colorado", 
+				                     4.94, 
+				                     5.62
+				                  ], 
+				                  [
+				                     "on", 
+				                     5.62, 
+				                     5.74
+				                  ], 
+				                  [
+				                     "Sunday", 
+				                     5.74, 
+				                     6.34
+				                  ]
+				               ], 
+				               "confidence": 0.891, 
+				               "transcript": "several tornadoes touch down as a line of severe thunderstorms swept through Colorado on Sunday "
+				            }, 
+				            {
+				               "transcript": "several tornadoes touched down as a line of severe thunderstorms swept through Colorado on Sunday "
+				            }, 
+				            {
+				               "transcript": "several tornadoes touch down is a line of severe thunderstorms swept through Colorado on Sunday "
+				            }
+				         ], 
+				         "final": true
+				      }
+				   ], 
+				   "result_index": 0
+				}
