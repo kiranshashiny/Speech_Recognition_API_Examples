@@ -326,7 +326,13 @@ curl -X POST -u ${username}:${password} --header "Content-Type: audio/flac" --he
 
 
 
-#####   Setting models when interpreting audio.
+
+
+#####   Personalize Model when interpreting audio, this is required when we have our own audio file that we would like to convert to text.
+
+In this example - I used the same curl command above to recognize and it failed !!
+
+The error message and how to resolve it is in the snapshot , we have to include the "MODEL argument" with the appropriate model in the curl command as an argument.
 
 
 
