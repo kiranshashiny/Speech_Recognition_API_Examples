@@ -1,6 +1,28 @@
 # Speech_Recognition_API_Examples
 
 https://www.ibm.com/watson/developercloud/doc/speech-to-text/tutorial.shtml
+This repository documents the trials and errors that I must have made during my learning processes of the Speech to Text Watson engine.
+
+Essentially we have to first set up a certain model to interpret the voice in the flat file or streaming audio.
+
+In my exposure so far I was able to read external files of format ( flac ) and convert it to text ( as JSON output ) for a certain model.
+
+If you are trying to read in a certain audio file in flac format and receive an error that the engine cannot read, then you might want to consider setting one of the other models to recognize the audio.
+
+In other words the engine supports different types of models as listed below and we can get that out by issuing the GET command,
+
+The documentation for other models are also listed in this URL 
+
+http://www.ibm.com/watson/developercloud/doc/speech-to-text/output.shtml
+
+
+User can set up the model when issuing the GET command and recognize the voice or audio.
+
+
+Since audio formats could come in various formats, I converted a m4a to flac model and was able to input that the recognize curl command and tried to interpret the audio.  The online tool to convert m4a to flac that I used was from  zamzar  ( google it please )
+
+Some of the CURL commands that I experimented with :
+
 
 ####### Get Models
 
@@ -301,3 +323,20 @@ curl -X POST -u ${username}:${password} --header "Content-Type: audio/flac" --he
 				   ], 
 				   "result_index": 0
 				}
+
+
+
+#####   Setting models when interpreting audio.
+
+
+
+<img width="1327" src="https://cloud.githubusercontent.com/assets/14288989/21221587/f85f5654-c2e3-11e6-9ef1-b2fddf8de657.png">
+
+to resolve this :
+
+
+
+curl -X POST -u ${username}:${password} --header "Content-Type: audio/flac" --header "Transfer-Encoding: chunked" --data-binary @./ContrastSecurityLibertyOnTravis.flac "https://stream.watsonplatform.net/speech-to-text/api/v1/recognize?model=en-US_NarrowbandModel&continuous=true"
+
+
+<img width="1335" src="https://cloud.githubusercontent.com/assets/14288989/21222032/eb11bfa8-c2e5-11e6-90f7-2b4a63fd1cd4.png">
