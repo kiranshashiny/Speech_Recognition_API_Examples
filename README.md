@@ -328,7 +328,7 @@ curl -X POST -u ${username}:${password} --header "Content-Type: audio/flac" --he
 
 
 
-#####   Personalize Model when interpreting audio, this is required when we have our own audio file that we would like to convert to text.
+####   How to Personalize Model when interpreting Audio, this is required when we have our own audio file that we would like to convert to text.
 
 In this example - I used the same curl command above to recognize and it failed !!
 
@@ -338,8 +338,7 @@ The error message and how to resolve it is in the snapshot , we have to include 
 
 <img width="1327" src="https://cloud.githubusercontent.com/assets/14288989/21221587/f85f5654-c2e3-11e6-9ef1-b2fddf8de657.png">
 
-to resolve this :
-
+To resolve this include the model as part of the curl command.
 
 
 curl -X POST -u ${username}:${password} --header "Content-Type: audio/flac" --header "Transfer-Encoding: chunked" --data-binary @./ContrastSecurityLibertyOnTravis.flac "https://stream.watsonplatform.net/speech-to-text/api/v1/recognize?model=en-US_NarrowbandModel&continuous=true"
